@@ -26,7 +26,7 @@ export function GradientBackground() {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             radius: Math.random() * 300 + 100,
-            dx: Math.random() * 0.2 - 0.1,
+            dx: Math.random() * 0.6 - 0.3,
             dy: Math.random() * 0.2 - 0.1,
             hue: Math.random() * 60 + 220, // Blue to purple range
         }))
@@ -64,5 +64,5 @@ export function GradientBackground() {
         }
     }, [])
 
-    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-70" aria-hidden="true" />
+    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-50" aria-hidden="true" />
 }

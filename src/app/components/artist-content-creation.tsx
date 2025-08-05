@@ -38,13 +38,7 @@ export default function ArtistContentCreation() {
     const [selectedService, setSelectedService] = useState(0)
 
     return (
-        <section className="py-16  relative overflow-hidden">
-            {/* Simple background pattern */}
-            <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-20 left-10 w-2 h-2 bg-white rounded-full"></div>
-                <div className="absolute bottom-40 right-20 w-1 h-1 bg-white rounded-full"></div>
-                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-white rounded-full"></div>
-            </div>
+        <section className="py-16 relative overflow-hidden">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
@@ -61,7 +55,7 @@ export default function ArtistContentCreation() {
                         </span>
                     </h2>
 
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed dark:text-gray-200">
                         Youve built your fanbase. Now lets create content that keeps them engaged and attracts new fans.
                         Professional-grade content creation designed for artists who are ready to scale.
                     </p>
@@ -73,8 +67,8 @@ export default function ArtistContentCreation() {
                         <div
                             key={index}
                             className={`p-6 rounded-2xl border transition-all duration-300 cursor-pointer ${selectedService === index
-                                    ? "bg-purple-500/10 border-purple-200/30"
-                                    : "bg-gray-200/50 hover:border-gray-400"
+                                ? "bg-purple-500/20 border-purple-200/30"
+                                : "bg-gray-200/60 hover:border-gray-400 dark:bg-gray-200/20" 
                                 }`}
                             onClick={() => setSelectedService(index)}
                         >
@@ -83,13 +77,13 @@ export default function ArtistContentCreation() {
                             </div>
 
                             <h3 className="text-lg font-semibold mb-2 text-center">{service.title}</h3>
-                            <p className="text-gray-600 text-sm mb-4 text-center">{service.description}</p>
+                            <p className="text-gray-600 text-sm mb-4 text-center dark:text-gray-200">{service.description}</p>
 
                             <div className="space-y-2 mb-4">
                                 {service.features.map((feature, featureIndex) => (
                                     <div key={featureIndex} className="flex items-center text-sm">
                                         <CheckCircle className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-800">{feature}</span>
+                                        <span className="text-gray-800 dark:text-gray-200">{feature}</span>
                                     </div>
                                 ))}
                             </div>
@@ -104,12 +98,12 @@ export default function ArtistContentCreation() {
                 {/* CTA */}
                 <div className="text-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-8">
                     <h3 className="text-2xl font-bold  mb-4">Ready to Elevate Your Content?</h3>
-                    <p className="text-gray-500 mb-6 max-w-2xl mx-auto">
+                    <p className="text-gray-500 mb-6 max-w-2xl mx-auto dark:text-gray-200">
                         Join successful artists whove scaled their content and grown their fanbase with our proven strategies.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white  font-semibold rounded-full transition-colors">
+                        <button className="px-8 py-3 bg-purple-500 dark:text-gray-200 hover:bg-purple-600 text-white font-semibold rounded-full transition-colors">
                             Start Your Project
                         </button>
                         <button className="px-8 py-3 bg-transparent border border-gray-600 hover:border-gray-500  font-semibold rounded-full transition-colors">

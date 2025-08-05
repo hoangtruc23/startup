@@ -1,9 +1,13 @@
-import { Button } from "../../../components/ui/button"
+"use client"
+
+import { motion } from "framer-motion"
+import { ExternalLink } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
+import { Button } from "../../../components/ui/button"
 
 export default function ProjectsPage() {
     const projects = [
@@ -72,73 +76,80 @@ export default function ProjectsPage() {
     ]
 
     return (
-        <div className="pt-16">
+        <div className="pt-16 ">
             {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-                <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Our Recent
-                        <span className="text-purple-600 block">Projects</span>
-                    </h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                        Explore a selection of my recent work, showcasing various technologies and solutions Ive built for clients
-                        across different industries.
-                    </p>
+            <section className="py-20">
+                <div className="container mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center "
+                    >
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-gray-200">
+                            Our Recent
+                            <span className="color-main block">Projects</span>
+                        </h1>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 dark:text-gray-200">
+                            Explore a selection of my recent work, showcasing various technologies and solutions Ive built for clients
+                            across different industries.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Projects Grid */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {projects.map((project) => (
-                            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                                <div className="relative">
-                                    <Image
-                                        src={project.image || "/placeholder.svg"}
-                                        alt={project.title}
-                                        width={500}
-                                        height={300}
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="absolute top-4 left-4">
-                                        <Badge variant="secondary" className="bg-white/90">
-                                            {project.category}
-                                        </Badge>
-                                    </div>
-                                </div>
-                                <CardContent className="p-6">
-                                    <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                                    <p className="text-gray-600 mb-4">{project.description}</p>
-
-                                    {/* <div className="flex flex-wrap gap-2 mb-4">
-                                        {project.technologies.map((tech) => (
-                                            <Badge key={tech} variant="outline" className="text-xs">
-                                                {tech}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center "
+            >
+                <section className="mb-20">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+                            {projects.map((project) => (
+                                <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                                    <div className="relative">
+                                        <Image
+                                            src={project.image || "/placeholder.svg"}
+                                            alt={project.title}
+                                            width={500}
+                                            height={300}
+                                            className="w-full h-48 object-cover"
+                                        />
+                                        <div className="absolute top-4 left-4">
+                                            <Badge variant="secondary" className="bg-white/90">
+                                                {project.category}
                                             </Badge>
-                                        ))}
-                                    </div> */}
-
-                                    <div className="flex space-x-3">
-                                        <Button size="sm" className="m-auto">
-                                            <ExternalLink size={16} className="mr-2" />
-                                            Live Demo
-                                        </Button>
-                                       
+                                        </div>
                                     </div>
-                                </CardContent>
-                            </Card>
-                        ))}
+                                    <CardContent className="p-6">
+                                        <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                                        <p className="text-gray-600 mb-4 dark:text-gray-200">{project.description}</p>
+
+                                        <div className="flex space-x-3">
+                                            <Button size="sm" className="m-auto">
+                                                <ExternalLink size={16} className="mr-2" />
+                                                Live Demo
+                                            </Button>
+
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </motion.div>
+
 
             {/* Process Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Development Process</h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 dark:text-gray-200">My Development Process</h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-200">
                             A structured approach to ensure your project is delivered on time and exceeds expectations.
                         </p>
                     </div>
@@ -149,7 +160,7 @@ export default function ProjectsPage() {
                                 <span className="text-2xl font-bold text-purple-600">1</span>
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Discovery</h3>
-                            <p className="text-gray-600">Understanding your business goals and project requirements.</p>
+                            <p className="text-gray-600 dark:text-gray-200">Understanding your business goals and project requirements.</p>
                         </div>
 
                         <div className="text-center">
@@ -157,7 +168,7 @@ export default function ProjectsPage() {
                                 <span className="text-2xl font-bold text-blue-600">2</span>
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Planning</h3>
-                            <p className="text-gray-600">Creating detailed project roadmap and technical specifications.</p>
+                            <p className="text-gray-600 dark:text-gray-200">Creating detailed project roadmap and technical specifications.</p>
                         </div>
 
                         <div className="text-center">
@@ -165,7 +176,7 @@ export default function ProjectsPage() {
                                 <span className="text-2xl font-bold text-green-600">3</span>
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Development</h3>
-                            <p className="text-gray-600">Building your solution with regular updates and feedback.</p>
+                            <p className="text-gray-600 dark:text-gray-200">Building your solution with regular updates and feedback.</p>
                         </div>
 
                         <div className="text-center">
@@ -173,7 +184,7 @@ export default function ProjectsPage() {
                                 <span className="text-2xl font-bold text-orange-600">4</span>
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Launch</h3>
-                            <p className="text-gray-600">Deploying your project and providing ongoing support.</p>
+                            <p className="text-gray-600 dark:text-gray-200">Deploying your project and providing ongoing support.</p>
                         </div>
                     </div>
                 </div>

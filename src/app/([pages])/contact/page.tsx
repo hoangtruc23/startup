@@ -42,10 +42,10 @@ export default function ContactPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
+                    className="text-center mt-20 mb-30"
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">Get In Touch</h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-200"> 
                         Ready to transform your brand? Lets start a conversation about your goals and how we can help you achieve
                         them.
                     </p>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="bg-gray-100 border border-gray-300 rounded-2xl p-8 backdrop-blur-sm">
-                            <h2 className="text-2xl font-bold  mb-6 uppercase">Send Us a Message</h2>
+                            <h2 className="text-2xl font-bold  mb-6 uppercase dark:text-black">Send Us a Message</h2>
 
                             {isSubmitted ? (
                                 <motion.div
@@ -186,9 +186,9 @@ export default function ContactPage() {
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 dark:text-gray-800">
                                         <div>
-                                            <label htmlFor="name" className="block text-sm font-medium  mb-2">
+                                            <label htmlFor="name" className="block text-sm font-medium mb-2">
                                                 Your Name
                                             </label>
                                             <input
@@ -220,7 +220,7 @@ export default function ContactPage() {
                                     </div>
 
                                     <div>
-                                        <label htmlFor="subject" className="block text-sm font-medium  mb-2">
+                                        <label htmlFor="subject" className="block text-sm font-medium mb-2 dark:text-gray-800">
                                             Subject
                                         </label>
                                         <input
@@ -236,7 +236,7 @@ export default function ContactPage() {
                                     </div>
 
                                     <div>
-                                        <label htmlFor="message" className="block text-sm font-medium  mb-2">
+                                        <label htmlFor="message" className="block text-sm font-medium  mb-2 dark:text-gray-800">
                                             Message
                                         </label>
                                         <textarea

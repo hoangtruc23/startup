@@ -6,9 +6,8 @@ function Header() {
     return (
         <div className="flex items-center justify-between m-5">
             <div className="font-bold uppercase">Startup</div>
-            <ul className="flex gap-10 text-xl">
+            <ul className="flex gap-10 text-xl font-bold">
                 <Link href='/'>Home</Link>
-                {/* <Link href='/about'>About Our</Link> */}
                 <Link href='/project'>Project</Link>
                 <Link href='/contact'>Contact</Link>
             </ul>

@@ -121,3 +121,34 @@
     @apply bg-background text-foreground;
   }
 }
+
+:root {
+  --bg-main: var(--color-purple-500);
+  --color-main: var(--color-purple-600);
+}
+
+/* BACKGROUND  */
+.bg-main {
+  background-color: var(--bg-main);
+}
+
+.color-main {
+  color: var(--color-main);
+}
+
+
+/* TEXT  */
+.text-H1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+.screen-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
