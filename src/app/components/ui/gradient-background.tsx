@@ -25,9 +25,11 @@ export function GradientBackground() {
         const blobs = Array.from({ length: 5 }, () => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            radius: Math.random() * 300 + 100,
-            dx: Math.random() * 0.6 - 0.3,
-            dy: Math.random() * 0.2 - 0.1,
+            radius: Math.random() * 300 + 150,
+            // dx: Math.random() * 0.6 - 0.3,
+            // dy: Math.random() * 0.2 - 0.1,
+            dx: (Math.random() - 0.5) * 20, // tăng tốc ngang
+            dy: (Math.random() - 0.5) * 20, // tăng tốc dọc
             hue: Math.random() * 60 + 220, // Blue to purple range
         }))
 
@@ -64,5 +66,5 @@ export function GradientBackground() {
         }
     }, [])
 
-    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-50" aria-hidden="true" />
+    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-60" aria-hidden="true" />
 }

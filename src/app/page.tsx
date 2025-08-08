@@ -53,8 +53,6 @@ export default function Home() {
             >
               <Button variant="outline" className="p-6">View Our Work</Button>
             </motion.div>
-
-
           </div>
         </div>
         <ArtistContentCreation />

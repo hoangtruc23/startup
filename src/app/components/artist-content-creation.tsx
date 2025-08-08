@@ -49,7 +49,7 @@ export default function ArtistContentCreation() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span className="block ">Content Creation for</span>
+                        <span className="block ">Our Service</span>
                         <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                             Artists with Following
                         </span>
